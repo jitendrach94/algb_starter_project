@@ -16,7 +16,7 @@ using namespace Circuit;
 using namespace Poly;
 using namespace std::chrono; 
 
-int main()
+int main(int argc, char **argv)
 {
     vector<gate> pInputs{};
     vector<gate> theCircuit{};
@@ -30,7 +30,7 @@ int main()
     clock_t start, end;
     start = clock(); 
     cout<<"Welcome in Algebraic Backward Rewriting"<<endl;
-    string pFile="blif/16bit-SP-AR-RC.blif";
+    string pFile=argv[1];
     circuit *pCircuit{};
   
     pCircuit->circuitModeling(pFile, pInputs, theCircuit, pOutputs, mapNumWire, mapWireNum, fanouts, outList, gateToRelatedGate);
